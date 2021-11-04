@@ -9,9 +9,12 @@ import { routerConfiguration } from './router-configuration';
 
 ReactDOM.render(
   <React.StrictMode>
-    <RouterProvider>
+    <RouterProvider
+      checkLoginStatus={() => false}
+      unauthorizedRedirectTo='/auth/login'
+    >
       <RouterMap routes={routerConfiguration} />
     </RouterProvider>
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
